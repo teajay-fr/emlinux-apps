@@ -1,0 +1,3 @@
+/home/vmail d 664 900 900 - - - - -
+/var/log/dovecot.log f 664 900 900 - - - - -
+/var/log/dovecot-info.log f 664 900 900 - - - - -

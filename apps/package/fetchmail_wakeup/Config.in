@@ -1,0 +1,8 @@
+config BR2_PACKAGE_FETCHMAIL_WAKEUP
+	bool "Fetchmail wakeup"
+    select BR2_PACKAGE_FETCHMAIL
+    select BR2_PACKAGE_DOVECOT
+	help
+	  Fetchmail wakeup extension for dovcecot
+
+	  https://github.com/marschap/fetchmail_wakeup

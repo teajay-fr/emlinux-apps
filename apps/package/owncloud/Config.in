@@ -1,0 +1,27 @@
+config BR2_PACKAGE_OWNCLOUD
+	bool "owncloud"
+    select BR2_PACKAGE_PHP
+    select BR2_PACKAGE_PHP_EXT_CTYPE
+    select BR2_PACKAGE_PHP_EXT_DOM
+    select BR2_PACKAGE_PHP_EXT_ICONV
+    select BR2_PACKAGE_PHP_EXT_JSON 
+    select BR2_PACKAGE_PHP_EXT_LIBXML2 
+    select BR2_PACKAGE_PHP_EXT_SIMPLEXML
+    select BR2_PACKAGE_PHP_EXT_ZIP
+    select BR2_PACKAGE_PHP_EXT_ZLIB
+    select BR2_PACKAGE_PHP_EXT_PDO
+    select BR2_PACKAGE_PHP_EXT_FILEINFO
+    select BR2_PACKAGE_PHP_EXT_BZIP2
+    select BR2_PACKAGE_PHP_EXT_FTP
+    select BR2_PACKAGE_PHP_EXT_GMP
+    select BR2_PACKAGE_PHP_EXT_CURL
+    select BR2_PACKAGE_PHP_EXT_OPENSSL
+    select BR2_PACKAGE_PHP_EXT_INTL
+    select BR2_PACKAGE_PHP_EXT_EXIF
+    select BR2_PACKAGE_PHP_EXT_GD
+    select BR2_PACKAGE_LIBJPEG
+    select BR2_PACKAGE_LIBPNG
+	help
+	  Owncloud is an opensource NAS server package
+
+	  http://www.owncloud.org

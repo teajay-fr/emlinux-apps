@@ -1,0 +1,5 @@
+menu Applications
+source "$BR2_EXTERNAL/package/owncloud/Config.in"
+source "$BR2_EXTERNAL/package/roundcube/Config.in"
+source "$BR2_EXTERNAL/package/fetchmail_wakeup/Config.in"
+endmenu
