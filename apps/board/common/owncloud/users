@@ -1,3 +1,4 @@
 dovecot 887 dovecot 887 * - - - dovecot user
 dovenull 888 dovenull 888 * - - - dovecot user
 vmail 900 vmail 900 = /home/vmail /bin/sh - dovecot user
+fetchmail 901 fetchmail 901 * - - - fetchmail user

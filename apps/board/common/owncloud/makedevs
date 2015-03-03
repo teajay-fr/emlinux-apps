@@ -1,5 +1,4 @@
 /home/vmail d 664 900 900 - - - - -
-/var/log/dovecot.log f 664 900 900 - - - - -
-/var/log/dovecot-info.log f 664 900 900 - - - - -
 /etc/fetchmail.conf f 0700 901 901 - - - - -
-/var/run/mysqld d 664 900 900 - - - - -
+/run/mysqld d 664 99 99 - - - - -
+/etc/init.d/S98mysqlinit f 0700 0 0 - - - - -

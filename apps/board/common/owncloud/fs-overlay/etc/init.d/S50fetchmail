@@ -5,7 +5,7 @@
 
 start() {
 	echo -n "Starting fetchmail: "
-	start-stop-daemon -S -q -p /var/run/fetchmail.pid --exec /usr/sbin/fetchmail -- -d 300 --pidfile /var/run/fetchmail.pid -f /etc/fetchmail.conf
+	start-stop-daemon -S -q --chuid vmail:vmail -p /home/fetchmail/fetchmail.pid --exec /usr/bin/fetchmail -- -d 300 --pidfile /home/fetchmail/fetchmail.pid -f /etc/fetchmail.conf
 	echo "OK"
 }
 stop() {

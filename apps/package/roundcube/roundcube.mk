@@ -15,5 +15,8 @@ ROUNDCUBE_LICENSE_FILES = LICENSE
 define ROUNDCUBE_INSTALL_TARGET_CMDS
     mkdir -p $(TARGET_DIR)/var/www/roundcube
     cp -R $(@D)/* $(TARGET_DIR)/var/www/roundcube
+
+    echo "CREATE DATABASE IF NOT EXISTS roundcube" >> $(TARGET_DIR)/var/tmp/mysqlinit.sql
+    echo "GRANT ALL PRIVILEGES ON roundcube.* TO 'roundcube'@'localhost' IDENTIFIED BY '$(BR2_PACKAGE_ROUNDCUBE_DB_PASSWORD)';" >> $(TARGET_DIR)/var/tmp/mysqlinit.sql
 endef
 $(eval $(generic-package))

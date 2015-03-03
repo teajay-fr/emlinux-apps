@@ -21,7 +21,23 @@ config BR2_PACKAGE_OWNCLOUD
     select BR2_PACKAGE_PHP_EXT_GD
     select BR2_PACKAGE_LIBJPEG
     select BR2_PACKAGE_LIBPNG
+    select BR2_PACKAGE_PCRE
+    select BR2_PACKAGE_PCRE_UTF
+    select BR2_PACKAGE_MYSQL
+    select BR2_PACKAGE_MYSQLCONFIG
 	help
 	  Owncloud is an opensource NAS server package
 
 	  http://www.owncloud.org
+
+if BR2_PACKAGE_OWNCLOUD
+
+config BR2_PACKAGE_OWNCLOUD_DB_PASSWORD
+    string "Owncloud database password"
+    default "password"
+    help
+      Specify the password to use as owncloud database password
+
+
+endif
+

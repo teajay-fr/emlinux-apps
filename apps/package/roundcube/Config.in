@@ -20,8 +20,21 @@ config BR2_PACKAGE_ROUNDCUBE
     select BR2_PACKAGE_PHP_EXT_EXIF
     select BR2_PACKAGE_PHP_EXT_GD
     select BR2_PACKAGE_LIBJPEG
-    select BR2_PACKAGE_LIBPNG
+    select BR2_PACKAGE_MYSQL
+    select BR2_PACKAGE_MYSQLCONFIG
 	help
 	  Roundcube is an opensource email web front end
 
 	  http://www.roundcube.org
+
+if BR2_PACKAGE_ROUNDCUBE
+
+config BR2_PACKAGE_ROUNDCUBE_DB_PASSWORD
+    string "Roundcube database password"
+    default "password"
+    help
+      Specify the password to use as roundcube database password
+
+
+endif
+
