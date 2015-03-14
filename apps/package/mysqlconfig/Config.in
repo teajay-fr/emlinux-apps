@@ -1,0 +1,15 @@
+config BR2_PACKAGE_MYSQLCONFIG
+	bool "Mysql Configuration"
+	help
+	  Add a first boost MySql initialization script
+
+if BR2_PACKAGE_MYSQLCONFIG
+
+config BR2_PACKAGE_MYSQLCONFIG_PASSWORD
+    string "MySQL root password"
+    default "password"
+    help
+      Specify the password to use as root password for mysql administration
+
+endif
+

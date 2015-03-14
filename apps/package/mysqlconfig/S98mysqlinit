@@ -1,0 +1,16 @@
+#!/bin/sh
+echo "Waiting for MySQL"
+until pids=$(pidof mysqld)
+do
+  sleep 1
+done
+
+echo "Setting up system."
+mysqladmin -u root password @MYSQL_DB_PASSWORD@
+if [[ -f /var/tmp/mysqlinit.sql ]]
+then
+mysql -u root --password=@MYSQL_DB_PASSWORD@ < /var/tmp/mysqlinit.sql
+rm /var/tmp/mysqlinit.sql
+fi
+# Delete me
+rm /etc/init.d/S98mysqlinit
