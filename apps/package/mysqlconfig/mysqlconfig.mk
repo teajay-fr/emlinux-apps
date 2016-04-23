@@ -14,8 +14,9 @@ MYSQLCONFIG_DEPENDENCIES = mysql
 MYSQLCONFIG_PKG_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
 
 define MYSQLCONFIG_INSTALL_TARGET_CMDS
+    cp $(MYSQLCONFIG_PKG_DIR)/S97mysqld $(TARGET_DIR)/etc/init.d/S97mysqld
     sed 's/@MYSQL_DB_PASSWORD@/$(patsubst "%",%,$(BR2_PACKAGE_MYSQLCONFIG_PASSWORD))/' $(MYSQLCONFIG_PKG_DIR)/S98mysqlinit > $(TARGET_DIR)/etc/init.d/S98mysqlinit
-    rm $(TARGET_DIR)/var/tmp/mysqlinit.sql
+    rm -f $(TARGET_DIR)/var/tmp/mysqlinit.sql
     mkdir -p $(TARGET_DIR)/var/run/mysqld
 endef
 $(eval $(generic-package))
